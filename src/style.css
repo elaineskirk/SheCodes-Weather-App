@@ -1,0 +1,68 @@
+h1 {
+  font-family: "Quicksand", sans-serif;
+}
+#currentdescrip {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: larger;
+}
+p,
+#detail {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+p {
+  font-size: medium;
+}
+
+body {
+  background: url("/image/plant.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.container {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border-color: black;
+  box-shadow: 1px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#description {
+  text-transform: capitalize;
+}
+
+#search-form {
+  padding-left: 10px;
+}
+
+#forecast {
+  font-size: larger;
+}
+
+#spotify {
+  position: absolute;
+  bottom: 0;
+}
+
+#right {
+  display: inline;
+  text-align: right;
+  float: right;
+}
+
+#left {
+  display: inline;
+  text-align: left;
+  float: left;
+}
