@@ -18,42 +18,66 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     <script src="https://kit.fontawesome.com/9906062a9f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-<div class="container" id="card">
-<div class="card" style="width: 55rem;">
-    <div class="card-body">
-         <div class="row mr-5 p-3 pl-1">
-             <div class="col-6" id="left">
-                <h1 id="city"></h1>
-                  <ul>
-                     <span id="currentdescrip">
-                     <li id="date"></li>
-                     <li id="description"></li>
-                     </span>
-                  </ul>
-              </div>
-              <div class="col-2">
-
-              </div>
-              <div class="col-4" id="right">
-                <h1>
-                  <span id="temperature"></span>
-                    °F
+<div class="weatherApp">
+  <div class="container-md border border-dark" style="width: 50rem" id="card">
+      <div class="row mr-5 p-3 pl-1">
+            <div class="col-9">
+              <form class="search-form" id="search-form">
+                <input
+                  type="search"
+                  placeholder="Search..."
+                  autocomplete="off"
+                  autofocus="on"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+            </div>
+            <div class="col">
+              <button class="btn btn-dark shadow-sm w-30" id="submit-search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <button class="btn btn-dark shadow-sm w-30" id="current-location-button">
+                  <i class="fa-solid fa-location-dot"></i>
+              </button>
+            </div>
+        </div>
+              </form>
+         <div class="row mr-5 p-1 pl-1">
+                <h1> 
+                  <span id="city">Portland</span>, 
+                  <span id="country">US</span>
                 </h1>
-                <ul id="detail">
-                         <li>
-                           Feels like: <span id="feel"></span>°F
-                          </li>
-                         <li>
-                           Humidity: <span id="humidity"></span>%
-                          </li>
-                         <li>
-                           Wind: <span id="wind"></span>mph
-                         </li>
+                <div class="row"> <h4 id="date"></h4></div>
+          </div>
+          <div class="row mr-5 p-1 pl-1">
+            <div class="col-1">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div class="col-2">
+                 <span id="temperature"> 50</span>
+                 <span id="units">
+                   <span id="far">°F</span>
+                   |
+                    <span id="cel">°C</span>
+                  </span>
+            </div>
+            <div class="col-2">
+              <ul id="detail">
+                  <li>
+                    Feels like: <span id="feel">50</span>°F
+                  </li>
+                  <li>
+                    Humidity: <span id="humidity">10</span>%
+                   </li>
+                   <li>
+                    Wind: <span id="wind">0</span>mph
+                    </li>
                 </ul>
-          
+            </div>
         </div>
             <div class="row text-center" id="forecast">
                 <div class="col">
@@ -82,27 +106,13 @@
                   <div class="4temp">57°</div>
                 </div>
             </div>
-            <div class="row mt-5 mr-3 p-3 pl-1">
-              <div class="col">
-                <form class="search-form" id="search-form">
-                    <input type="search" placeholder="Search..." autocomplete="off" autofocus="on" id = "city-input" class="form-control shadow-sm"/>
-              </div>
-              <div class="col-2">
-                <input type="submit" value="Enter" class = "form-control btn btn-dark shadow-sm w-75"/>
-              </div>
-              <div class="col-2">
-                <button class="btn btn-dark shadow-sm w-75" id="current-location-button">Current</button>
-              </div>
-            </form>
-            </div>
+            <br>
       </div>
-      <div>
-<a href="https://github.com/elaineskirk/SheCodes-Weather-App">Open-source code</a> by Elaine Kirk
-</div>
     </div>
-  </div>
-  </div>
-<br>
+ <div class="footer">
+<a href="https://github.com/elaineskirk/SheCodes-Weather-App">Open-source code</a> by Elaine Kirk
+ </div>
+ <br>
 <section id="spotify">
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/43Q9LvUErcQvo4YzG2wd5k?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
 </section>

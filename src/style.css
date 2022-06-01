@@ -1,10 +1,50 @@
+.weatherApp {
+  margin-top: 50px;
+  padding: 10px, auto;
+}
+
+#card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 1px;
+}
+
+#buttons {
+  font-size: 20px;
+}
+
 h1 {
   font-family: "Quicksand", sans-serif;
 }
-#currentdescrip {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: larger;
+
+h4 {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 14px;
 }
+
+.fa-cloud {
+  position: relative;
+  top: 10px;
+}
+
+.fa-cloud,
+#temperature {
+  font-size: 40px;
+}
+
+#units {
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  top: -25px;
+}
+
+#detail {
+  font-size: 12px;
+  font-weight: 500;
+}
+
 p,
 #detail {
   font-family: "Roboto Flex", sans-serif;
@@ -14,28 +54,15 @@ p {
   font-size: medium;
 }
 
+ul {
+  list-style: none;
+}
+
 body {
   background: url("/Users/sarakirk/Desktop/Weather App/image/plant.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
-}
-
-.container {
-  margin-top: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card {
-  border-color: black;
-  box-shadow: 1px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
 }
 
 #description {
@@ -50,19 +77,16 @@ ul {
   font-size: larger;
 }
 
-#spotify {
+.footer {
+  font-weight: 500;
+  top: 0;
+  right: 0%;
   position: absolute;
-  bottom: 0;
 }
 
-#right {
-  display: inline;
-  text-align: right;
-  float: right;
-}
-
-#left {
-  display: inline;
-  text-align: left;
-  float: left;
+#spotify {
+  position: relative;
+  bottom: 35%;
+  left: 35%;
+  width: 25%;
 }
