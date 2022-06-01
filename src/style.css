@@ -58,6 +58,14 @@ ul {
   list-style: none;
 }
 
+.feel,
+.humidity,
+.wind,
+a {
+  color: #425c49;
+  font-weight: bold;
+}
+
 body {
   background: url("/Users/sarakirk/Desktop/Weather App/image/plant.jpg");
   background-repeat: no-repeat;
@@ -78,7 +86,7 @@ body {
 }
 
 .footer {
-  font-weight: 500;
+  font-weight: bold;
   top: 0;
   right: 0%;
   position: absolute;
@@ -89,4 +97,8 @@ body {
   bottom: 35%;
   left: 35%;
   width: 25%;
+}
+
+a {
+  text-decoration: none;
 }

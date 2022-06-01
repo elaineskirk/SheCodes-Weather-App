@@ -13,10 +13,9 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto+Flex:opsz,wght@8..144,200&family=Source+Sans+Pro:wght@200&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto+Flex:opsz,wght@8..144,200;8..144,500&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
      <script src="https://kit.fontawesome.com/9906062a9f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="src/style.css" />
@@ -54,10 +53,10 @@
                 <div class="row"> <h4 id="date"></h4></div>
           </div>
           <div class="row mr-5 p-1 pl-1">
-            <div class="col-1">
+            <div class="col-md-1">
               <i class="fa-solid fa-cloud"></i>
             </div>
-            <div class="col-2">
+            <div class="col-md-2">
                  <span id="temperature"> 50</span>
                  <span id="units">
                    <span id="far">°F</span>
@@ -65,42 +64,42 @@
                     <span id="cel">°C</span>
                   </span>
             </div>
-            <div class="col-2">
+            <div class="col-sm-3">
               <ul id="detail">
                   <li>
-                    Feels like: <span id="feel">50</span>°F
+                    Feels like:<span class="feel"> <span id="feel">50</span>°F</span>
                   </li>
                   <li>
-                    Humidity: <span id="humidity">10</span>%
+                    Humidity:<span class="humidity"> <span id="humidity">10</span>%</span>
                    </li>
                    <li>
-                    Wind: <span id="wind">0</span>mph
+                    Wind:<span class="wind"> <span id="wind">0</span>mph</span>
                     </li>
                 </ul>
             </div>
         </div>
             <div class="row text-center" id="forecast">
-                <div class="col">
+                <div class="col-sm">
                   <div class="0day">Wed</div>
                   <div class="0smallemoji">🌧</div>
                   <div class="0temp">47°</div>
                 </div>
-                <div class="col">
+                <div class="col-sm">
                   <div class="1day">Thu</div>
                   <div class="1smallemoji">🌩</div>
                   <div class="1temp">50°</div>
                 </div>
-                <div class="col">
+                <div class="col-sm">
                   <div class="2day">Fri</div>
                   <div class="2smallemoji">🌤</div>
                   <div class="2temp">55°</div>
                 </div>
-                <div class="col">
+                <div class="col-sm">
                   <div class="3day">Sat</div>
                   <div class="3smallemoji">🌦</div>
                   <div class="3temp">51°</div>
                 </div>
-                <div class="col">
+                <div class="col-sm">
                   <div class="4day">Sun</div>
                   <div class="4smallemoji">☀️</div>
                   <div class="4temp">57°</div>
@@ -110,7 +109,7 @@
       </div>
     </div>
  <div class="footer">
-<a href="https://github.com/elaineskirk/SheCodes-Weather-App">Open-source code</a> by Elaine Kirk
+<a target="blank" href="https://github.com/elaineskirk/SheCodes-Weather-App">Open-source code</a> by Elaine Kirk
  </div>
  <br>
 <section id="spotify">
