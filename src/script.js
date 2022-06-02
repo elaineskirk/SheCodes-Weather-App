@@ -32,7 +32,7 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-//Search Engine
+//API
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;

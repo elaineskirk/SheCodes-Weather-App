@@ -74,7 +74,7 @@ body {
   background-position: center;
 }
 
-#description {
+h4:first-letter {
   text-transform: capitalize;
 }
 
