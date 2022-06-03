@@ -1,4 +1,4 @@
-//Date
+// Date Display
 function formatDate(date) {
   let hours = currentTime.getHours();
   if (hours < 10) {
@@ -32,7 +32,7 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-//API
+//API Search & Display
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -112,5 +112,7 @@ farLink.addEventListener("click", showFarTemp);
 
 let celLink = document.querySelector("#cel");
 celLink.addEventListener("click", showCelTemp);
+
+// Forecast
 
 searchCity("Portland");
