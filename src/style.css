@@ -65,7 +65,7 @@ ul {
 }
 
 body {
-  background: url("/Users/sarakirk/Desktop/Weather App/image/plant.jpg");
+  background: url("../image/plant.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
