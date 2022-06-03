@@ -58,6 +58,7 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  farTemperature = Math.round(response.data.main.temp);
 }
 
 function searchCity(city) {
@@ -88,3 +89,28 @@ searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+// Temperature
+
+function showFarTemp(event) {
+  event.preventDefault;
+  let resetTemp = document.querySelector("#temperature");
+  resetTemp.innerHTML = farTemperature;
+}
+
+function showCelTemp(event) {
+  event.preventDefault;
+  let celTemp = ((farTemperature - 32) * 5) / 9;
+  let tempDisplay = document.querySelector("#temperature");
+  tempDisplay.innerHTML = Math.round(celTemp);
+}
+
+let farTemperature = null;
+
+let farLink = document.querySelector("#far");
+farLink.addEventListener("click", showFarTemp);
+
+let celLink = document.querySelector("#cel");
+celLink.addEventListener("click", showCelTemp);
+
+searchCity("Portland");
