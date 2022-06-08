@@ -34,6 +34,14 @@ dateElement.innerHTML = formatDate(currentTime);
 
 // Forecast
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -46,15 +54,17 @@ function displayForecast(response) {
         `
             <div class="col-2">
               <div class="weather-forecast-date">
-                ${forecastDay.dt}
+                ${formatDate(forecastDay.dt)}
               </div>
-              <img src="http://openweathermap.org/img/wn/04d@2x.png" width="48"/>
+              <img src="https://openweathermap.org/img/wn/${
+                forecast.weather[0].icon
+              }@2x.png" width="48"/>
               <div class="weather-forecast-temp">
                 <span class="weather-forecast-high">
-                  50°
+                  ${forecastDay.temp.max}
                 </span>
                 <span class="weather-forecast-low">
-                  20°
+                  ${forecastDay.temp.min}
                 </span> 
               </div>
             </div>`;
@@ -69,7 +79,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "f1a2ea4a6c731782cfd0f623c7defd31";
-  let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=imperial`;
+  let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiURL).then(displayForecast);
 }
 
@@ -94,7 +104,7 @@ function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#iconElement");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   farTemperature = Math.round(response.data.main.temp);
@@ -152,4 +162,4 @@ farLink.addEventListener("click", showFarTemp);
 let celLink = document.querySelector("#cel");
 celLink.addEventListener("click", showCelTemp);
 
-searchCity("Portland");
+searchCity("Seattle");
