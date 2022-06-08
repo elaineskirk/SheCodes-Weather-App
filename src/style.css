@@ -79,8 +79,23 @@ h4:first-letter {
   padding-left: 10px;
 }
 
-#forecast {
-  font-size: larger;
+.weather-forecast {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 16px;
+}
+
+.weather-forecast-temp {
+  font-size: 14px;
+}
+
+.weather-forecast-low {
+  opacity: 0.8;
 }
 
 .footer {
