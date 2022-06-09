@@ -34,7 +34,7 @@ dateElement.innerHTML = formatDate(currentTime);
 
 // Forecast
 
-function formatDate(timestamp) {
+function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -54,18 +54,16 @@ function displayForecast(response) {
         `
             <div class="col-2">
               <div class="weather-forecast-date">
-                ${formatDate(forecastDay.dt)}
+               ${formatDay(forecastDay.dt)}
               </div>
               <img src="https://openweathermap.org/img/wn/${
-                forecast.weather[0].icon
+                forecastDay.weather[0].icon
               }@2x.png" width="48"/>
               <div class="weather-forecast-temp">
                 <span class="weather-forecast-high">
-                  ${forecastDay.temp.max}
-                </span>
+                  ${Math.round(forecastDay.temp.max)}°</span>
                 <span class="weather-forecast-low">
-                  ${forecastDay.temp.min}
-                </span> 
+                  ${Math.round(forecastDay.temp.min)}°</span> 
               </div>
             </div>`;
     }
@@ -79,11 +77,12 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "f1a2ea4a6c731782cfd0f623c7defd31";
-  let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiURL).then(displayForecast);
 }
 
 function displayWeatherCondition(response) {
+  getForecast(response.data.coord);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -162,4 +161,4 @@ farLink.addEventListener("click", showFarTemp);
 let celLink = document.querySelector("#cel");
 celLink.addEventListener("click", showCelTemp);
 
-searchCity("Seattle");
+searchCity("Portland");
